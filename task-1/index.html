@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop</title>
+
+  <style>
+    /* В видео блок style был свёрнут, поэтому здесь восстановлена простая
+       разметка, визуально похожая на показанную. На логику задачи она не влияет. */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+    }
+
+    .shop {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .product {
+      width: 195px;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .product h2 {
+      margin-top: 0;
+    }
+
+    button {
+      padding: 6px 12px;
+      border: 0;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .basket {
+      width: 205px;
+      margin: 0 auto;
+    }
+
+    #basket-items {
+      padding: 6px 20px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    #basket-items:empty {
+      border: 0;
+    }
+
+    #basket-items li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shop">
+    <div class="product">
+      <h2>Lenovo Yoga</h2>
+      <p>Price: <span class="price">3000</span></p>
+      <button onclick="addToBasket(1)">Buy</button>
+    </div>
+
+    <div class="product">
+      <h2>Acer Aspire</h2>
+      <p>Price: <span class="price">1800</span></p>
+      <button onclick="addToBasket(2)">Buy</button>
+    </div>
+
+    <div class="product">
+      <h2>Dell Vostro</h2>
+      <p>Price: <span class="price">3400</span></p>
+      <button onclick="addToBasket(3)">Buy</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="basket">
+    <h2 style="text-align: center;">Cart</h2>
+    <ul id="basket-items"></ul>
+    <h3 style="text-align: center;">Total price: <span id="total">0</span></h3>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
