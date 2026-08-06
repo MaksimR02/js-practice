@@ -19,48 +19,37 @@ const products = [
 let order = [];
 
 function addToBasket(productId) {
-  // TODO: добавить проверку наличия товара в заказе (при наличии выдать alert, что товар уже в корзине)
-  const productInOrder = order.find((item) => item.id === productId);
-  if (productInOrder) {
+  const isProductAlreadyOrdered = !!order.find((item) => item.id === productId);
+  if (isProductAlreadyOrdered) {
     alert("товар уже в корзине");
   } else {
-    // TODO: если товар еще не в корзине, добавить его из массива products
     const foundProduct = products.find((item) => productId === item.id);
     if (foundProduct) {
       order.push(foundProduct);
     }
   }
 
-  // Эти строчки не трогаем, они отвечают за переотрисовку страницы
   renderCart();
   rerenderTotalPrice();
 }
 
 function removeFromBasket(productId) {
-  // TODO: описать логику удаления товара из корзины
-  // order = order.filter(item => item.id !== productId);
-  const index = order.findIndex( item => item.id === productId)
-  order.splice(index, 1)
+  const itemToRemoveIndex = order.findIndex((item) => item.id === productId);
+  order.splice(itemToRemoveIndex, 1);
 
-
-  // Эти строчки не трогаем, они отвечают за переотрисовку страницы
   renderCart();
   rerenderTotalPrice();
 }
 
 function rerenderTotalPrice() {
-  
-  // TODO: опишите функционал подсчета общей стоимости заказа
   let totalPrice = 0;
-  for (const prop of order) {
-    totalPrice += prop.price;
+  for (const orderItem of order) {
+    totalPrice += orderItem.price;
   }
 
-  // Не меняйте эту строчку
   document.getElementById("total").innerText = totalPrice;
 }
 
-// Этот метод остается без изменений
 function renderCart() {
   const cart = document.getElementById("basket-items");
 
