@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            padding: 25px;
+            background-color: #b536d1;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            width: 370px;
+            margin: 25px auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px 10px;
+        }
+
+        button {
+            border: none;
+            background-color: #b536d1;
+            color: white;
+            cursor: pointer;
+        }
+
+        #todoList {
+            padding: 0;
+            margin-top: 25px;
+            list-style: none;
+        }
+
+        #todoList li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        #todoList input[type="checkbox"] {
+            margin-top: 4px;
+        }
+
+        .delete-btn {
+            margin-left: auto;
+            padding: 0;
+            background: none;
+            color: crimson;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>ToDo List</h1>
+    </header>
+
+    <main>
+        <form id="todoForm">
+            <input type="text" id="todoInput" placeholder="Enter todo">
+
+            <select id="userSelect">
+                <option value="">Select user</option>
+            </select>
+
+            <button id ="submit" type="submit">Add Todo</button>
+        </form>
+
+        <ul id="todoList"></ul>
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

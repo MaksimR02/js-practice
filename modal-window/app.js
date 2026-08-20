@@ -1,7 +1,6 @@
 const btn = document.getElementById("myBtn");
 const modal = document.getElementById("myModal");
 
-
 btn.addEventListener("click", openModal);
 
 function openModal() {
@@ -10,20 +9,20 @@ function openModal() {
 }
 
 function attachModalEvents() {
-    modal.querySelector('.close').addEventListener("click", closeMyModal);
-    document.addEventListener("keydown", closeByEsc);
-    modal.addEventListener("click", closeModalOutSide);
+  modal.querySelector(".close").addEventListener("click", closeMyModal);
+  document.addEventListener("keydown", closeByEsc);
+  modal.addEventListener("click", closeModalOutSide);
 }
 
 function detachModalEvents() {
-    modal.querySelector('.close').removeEventListener("click", closeMyModal);
-    document.removeEventListener("keydown", closeByEsc);
-    modal.removeEventListener("click", closeModalOutSide);
+  modal.querySelector(".close").removeEventListener("click", closeMyModal);
+  document.removeEventListener("keydown", closeByEsc);
+  modal.removeEventListener("click", closeModalOutSide);
 }
 
 function closeMyModal() {
-    modal.classList.remove("open");
-    detachModalEvents();
+  modal.classList.remove("open");
+  detachModalEvents();
 }
 
 function closeByEsc(event) {
