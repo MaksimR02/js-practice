@@ -4,6 +4,10 @@ A JavaScript TODO application that works with users and tasks loaded from the JS
 
 The project was created to practice working with asynchronous JavaScript, REST API requests, DOM manipulation, and user interactions.
 
+## Demo
+
+https://maksimr02.github.io/js-practice/TODO-list/
+
 ## Technologies
 
 - HTML5
